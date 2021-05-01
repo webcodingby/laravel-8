@@ -11,8 +11,12 @@
             <p class="card-text">{{ $user->email }}</p>
             <p class="card-text">Создан: {{ $user->created_at->format('d.m.y')}}</p>
             <p class="card-text">Обновлен: {{ $user->updated_at->format('d.m.y H:i:s') }}</p>
-            <a href="{{ route('users.edit', $user) }}" class="btn btn-success">Изменить</a>
-            <a href="{{ route('users.deploy', $user) }}" class="btn btn-danger">Удалить</a>
+            <form method="POST" action="{{ route('users.destroy', $user) }}">
+                <a href="{{ route('users.edit', $user) }}" class="btn btn-success">Изменить</a>
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-outline-danger mx-1">Удалить</button>
+            </form>
         </div>
     </div>
 @endsection
