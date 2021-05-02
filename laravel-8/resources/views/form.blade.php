@@ -4,7 +4,7 @@
 
 
 @section('content')
-<a type="button" class="btn btn-info" href="{{ route('users.index') }}">Back to users</a>
+<a type="button" class="btn btn-info" href="{{ route('users.index') }}">Пользователи</a>
 <form method="POST"
       @if (isset($user))
         action="{{ route('users.update', $user) }}"
@@ -34,7 +34,7 @@
     </div>
     <div class="row mt-4">
         <div class="col">
-            <button type="submit" class="btn btn-success">Create</button>
+            <button type="submit" class="btn btn-success">Создать</button>
         </div>
     </div>
 </form>
